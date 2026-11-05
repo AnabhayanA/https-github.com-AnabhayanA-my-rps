@@ -64,13 +64,13 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `check.py` for Black, P
 
 ### Work record
 
-**Issue:**  
+**Issue:**
 https://github.com/AnabhayanA/https-github.com-AnabhayanA-my-rps/issues/1
 
-**Pull request:**  
+**Pull request:**
 https://github.com/AnabhayanA/https-github.com-AnabhayanA-my-rps/pull/2
 
-**GitHub Actions:**  
+**GitHub Actions:**
 https://github.com/AnabhayanA/https-github.com-AnabhayanA-my-rps/actions
 
 **Implementation:**
