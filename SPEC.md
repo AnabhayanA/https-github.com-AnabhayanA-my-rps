@@ -26,8 +26,26 @@ Results are from the **player’s perspective**. `determine_winner(player, compu
 | scissors | scissors | tie |
 
 ### Agreed plan
+We agreed to build one complete round of Rock, Paper, Scissors using the existing Flask application.
 
-Before implementation, predict one matchup and explain it with your local coding agent. Discuss a short plan and checks. Once it makes sense, ask the agent to replace this paragraph with the agreed plan, preserving the expected results above. Continue in the same chat.
+**Prediction:** If the player chooses rock and the computer chooses paper, the player loses because paper covers rock.
+
+**Implementation plan:**
+1. Implement `determine_winner(player, computer)` in `game.py`.
+2. Return `win`, `lose`, or `tie` for all nine possible matchups.
+3. Display both moves and the correct result.
+4. Allow the player to choose again for a new independent round.
+5. Keep the existing interface and server without adding scores, accounts, or saved history.
+
+**Testing plan:**
+- Test all nine possible matchups.
+- Verify that a valid losing round returns the correct result.
+- Reject missing or unsupported moves, such as `banana`, with HTTP 400 and a helpful message.
+- Test a real HTTP request and displayed result.
+- Test a complete browser round and replay.
+- Run Black, Pylint, pytest, and Chromium browser checks.
+
+We will review the code, tests, and actual browser behavior before committing the completed work.
 
 ### Checks
 
@@ -45,6 +63,7 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `.venv/bin/python check
 ### Work record
 
 - Issue: add your own issue URL.
+- Issue: https://github.com/AnabhayanA/https-github.com-AnabhayanA-my-rps/issues/1
 - Pull request / CI: add actual URLs when they exist.
 - Implementation: **Not implemented.** The shell is supplied; `game.py` is unfinished.
 - Checks: **Rules not verified.** Supplied request/browser tests cover the shell only. After implementation, record actual full-check results and your browser observations here; put detailed results in the PR. Passing formatting and analysis alone is not evidence of correct rules.
