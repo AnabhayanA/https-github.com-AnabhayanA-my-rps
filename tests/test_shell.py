@@ -98,3 +98,17 @@ def test_stylesheet_is_available(client):
 def test_check_server_has_no_development_refresh(client):
     assert b"dev-refresh.js" not in client.get("/").data
     assert client.get("/__dev__/revision").status_code == 404
+
+
+def test_real_round_displays_correct_result(client, monkeypatch):
+    """Check a real round where Rock loses to Paper."""
+    monkeypatch.setattr(web.random, "choice", lambda _moves: "paper")
+
+    response = client.post("/", data={"move": "rock"})
+    page = response.get_data(as_text=True)
+
+    assert response.status_code == 200
+    assert "Rock" in page
+    assert "Paper" in page
+    assert "Computer wins" in page
+    assert 'data-outcome="lose"' in page
